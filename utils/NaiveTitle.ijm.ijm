@@ -10,19 +10,19 @@ run("RGB Color");
 
 getDimensions(width, height, channels, slices, frames);
 
-fontSize = 14;
+fontSize = 6;
+setFont("Arial", fontSize, "bold antialiased");
 
 for (i = 1; i <= slices; i++) {
     setSlice(i);
 
     label = "Frame: " + i;
+    makeText(label, 2, 1);
 
-    makeText(label, 5, 5);
-    Roi.setFont("Arial", fontSize, "bold antialiased");
     Roi.setStrokeColor("white");
     Roi.setPosition(i);
-
     Overlay.addSelection;
 }
 
 Overlay.show;
+run("Select None");
